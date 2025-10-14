@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bichos & Sítios - Início</title>
+    <style>
+        /* CSS para estilização (NÃO FOI ALTERADO) */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        :root {
+            --cor-fundo: #ffffff;
+            --cor-texto: #333333;
+            --cor-verde: #4CAF50;
+            --cor-marrom: #8D6E63;
+            --cor-sombra: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            color: var(--cor-texto);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        header h1 .verde {
+            color: var(--cor-verde);
+        }
+
+        header h1 .marrom {
+            color: var(--cor-marrom);
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #757575;
+            margin-bottom: 50px;
+        }
+
+        .categorias-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .categoria-botao {
+            background-color: var(--cor-fundo);
+            border: 2px solid #eee;
+            border-radius: 15px;
+            padding: 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: var(--cor-texto);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .categoria-botao:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px var(--cor-sombra);
+            border-color: var(--cor-verde);
+        }
+
+        .categoria-botao .icon {
+            font-size: 3.5em; /* Tamanho do ícone */
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .categoria-botao h2 {
+            font-size: 1.5em;
+            margin: 0 0 10px 0;
+            font-weight: 600;
+        }
+
+        .categoria-botao p {
+            font-size: 0.9em;
+            color: #757575;
+            margin: 0;
+        }
+
+        /* Cores específicas para ícones ao passar o mouse */
+        .categoria-botao:hover .icon-verde { color: var(--cor-verde); }
+        .categoria-botao:hover .icon-marrom { color: var(--cor-marrom); }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Bichos <span class="verde">&</span> Sítios</h1>
+            <p>Sistema de Gerenciamento Interno</p>
+        </header>
+
+        <main>
+            <div class="categorias-grid">
+                <a href="#" class="categoria-botao" data-pagina="r.html">
+                    <div class="icon icon-marrom">🦴</div>
+                    <h2>Rações</h2>
+                    <p>Controle de estoque e tipos</p>
+                </a>
+
+                <a href="#" class="categoria-botao" data-pagina="acessorios.html">
+                    <div class="icon icon-verde">🧸</div>
+                    <h2>Acessórios</h2>
+                    <p>Coleiras, brinquedos e casinhas</p>
+                </a>
+
+                <a href="#" class="categoria-botao" data-pagina="medicamentos.html">
+                    <div class="icon icon-marrom">⚕️</div>
+                    <h2>Medicamentos</h2>
+                    <p>Controle de validade e lotes</p>
+                </a>
+
+                <a href="#" class="categoria-botao" data-pagina="adubos.html">
+                    <div class="icon icon-verde">🌱</div>
+                    <h2>Adubos</h2>
+                    <p>Fertilizantes e defensivos</p>
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // ===== CÓDIGO ALTERADO =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const botoes = document.querySelectorAll('.categoria-botao');
+
+            botoes.forEach(function(botao) {
+                botao.addEventListener('click', function(event) {
+                    event.preventDefault(); // Impede a ação padrão do link
+
+                    const paginaDestino = this.getAttribute('data-pagina');
+
+                    // A linha do 'alert' foi removida/comentada para desativar o popup.
+                    // alert('Você seria redirecionado para a página: ' + paginaDestino);
+
+                    // A linha abaixo foi descomentada para ativar o redirecionamento.
+                    window.location.href = paginaDestino;
+                });
+            });
+        });
+    </script>
+
+</body>
+  </html>
+  
