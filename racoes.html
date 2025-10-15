@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bichos & Sítios - Rações</title>
+    <style>
+        /* CSS para estilização */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        :root {
+            --cor-fundo: #f4f4f4; /* Um cinza bem claro para diferenciar da home */
+            --cor-branco: #ffffff;
+            --cor-texto: #333333;
+            --cor-verde: #4CAF50;
+            --cor-marrom: #8D6E63;
+            --cor-sombra: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            margin: 0;
+            padding: 20px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            color: var(--cor-texto);
+            margin: 0;
+        }
+
+        header h1 .verde {
+            color: var(--cor-verde);
+        }
+
+        .navegacao {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-grow: 1;
+            justify-content: flex-end;
+        }
+
+        #barraBusca {
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 2px solid #ddd;
+            font-size: 1em;
+            width: 100%;
+            max-width: 300px;
+            transition: border-color 0.3s ease;
+        }
+
+        #barraBusca:focus {
+            outline: none;
+            border-color: var(--cor-verde);
+        }
+
+        .btn-voltar {
+            background-color: var(--cor-marrom);
+            color: var(--cor-branco);
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .btn-voltar:hover {
+            background-color: #795548;
+        }
+        
+        /* Grid de Produtos */
+        .produtos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .produto-card {
+            background-color: var(--cor-branco);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px var(--cor-sombra);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .produto-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .produto-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .produto-info {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .produto-nome {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin: 0 0 10px 0;
+        }
+
+        .produto-preco {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: var(--cor-verde);
+            margin: 0;
+        }
+        
+        /* Media query para telas menores */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .navegacao {
+                width: 100%;
+                justify-content: space-between;
+            }
+            #barraBusca {
+                max-width: none;
+                flex-grow: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1><span class="verde">Rações</span></h1>
+            <div class="navegacao">
+                <input type="text" id="barraBusca" placeholder="Buscar por nome...">
+                <a href="Home.html" class="btn-voltar">&larr; Voltar</a>
+            </div>
+        </header>
+<!-- Produtos -->
+        <main>
+            <div class="produtos-grid">
+                
+                <div class="produto-card">
+                    <img src="https://cdn.awsli.com.br/2500x2500/1682/1682407/produto/218741704/mockup_canister_almondega_dir_semfundo-785x1024-q5wj0gumt4.png" alt="Canister Almôndega">
+                    <div class="produto-info">
+                        <h2 class="produto-nome">Canister Almôndega Adulto 25kg</h2>
+                        <p class="produto-preco">R$ 173,00</p>
+                    </div>
+                </div>
+                
+                <div class="produto-card">
+                    <img src="https://tenda-bucket-prd.s3.sa-east-1.amazonaws.com/marketplace/product/0001/000000000000982999-SC/982999-2-28-03-2023-11-19-24-363.jpeg" alt="Ração Bonzo">
+                    <div class="produto-info">
+                        <h2 class="produto-nome">Bonzo Carne & Cereais Adulto 18kg</h2>
+                        <p class="produto-preco">R$ 145,00</p>
+                    </div>
+                </div>
+                
+                <div class="produto-card">
+                    <img src="https://m.media-amazon.com/images/I/71LknprHNFL.jpg" alt="Kanina Carne & Cereais Adulto 15kg">
+                    <div class="produto-info">
+                        <h2 class="produto-nome">Kanina Carne & Cereais Adulto 15kg</h2>
+                        <p class="produto-preco">R$ 158,00</p>
+                    </div>
+                </div>
+                
+                <div class="produto-card">
+                    <img src="https://m.media-amazon.com/images/I/71x7z1AVMUL._UF1000,1000_QL80_.jpg" alt="KANINA Filhote">
+                    <div class="produto-info">
+                        <h2 class="produto-nome">Kanina Carne e Cereais Filhote 15kg</h2>
+                        <p class="produto-preco">R$ 165,00</p>
+                    </div>
+                </div>
+                
+                <div class="produto-card">
+                    <img src="https://pedsky.com.br/assets/site/img/posts/c2bf06eeb9e8d683fc9c1c283df11eed.webp" alt="PedDog">
+                    <div class="produto-info">
+                        <h2 class="produto-nome">PedDog Carne Adulto 25kg</h2>
+                        <p class="produto-preco">R$ 130,00</p>
+                    </div>
+                </div>
+                
+                <div class="produto-card">
+                    <img src="https://salescdn.net/vvKgPoTD0cnqOJH5PwWqUUmGuQI=/adaptive-fit-in/500x0/prod/store/13560/medias/products/1702406341455.webp" alt="Magic Pet">
+                    <div class="produto-info">
+                        <h2 class="produto-nome">MagicPet Carne Adulto 25kg</h2>
+                        <p class="produto-preco">R$ 180,00</p>
+                    </div>
+                </div>
+                
+                <div class="produto-card">
+                    <img src="https://vbalimentos.com.br/uploads/thumbs/570x500/produtos/pleno/pleno.png" alt="pleno">
+                    <div class="produto-info">
+                        <h2 class="produto-nome">Pleno Carne Adulto 20kg</h2>
+                        <p class="produto-preco">R$ 145,00</p>
+                    </div>
+                </div>
+                
+                <div class="produto-card">
+                    <img src="https://vidan.com.br/wp-content/uploads/2021/09/mockup-nino-carne.png" alt="ninodog">
+                    <div class="produto-info">
+                        <h2 class="produto-nome">NinoDog Carne Adulto 25kg</h2>
+                        <p class="produto-preco">R$ 145,00</p>
+                    </div>
+                </div>
+                
+                <div class="produto-card">
+                    <img src="https://images.tcdn.com.br/img/img_prod/1023012/racao_peddy_carne_para_caes_adultos_15kg_2033_1_55d53ecb854acb4bbf84083151ff3776.jpg" alt="Peddy Carne">
+                    <div class="produto-info">
+                        <h2 class="produto-nome">Péddy Carne Adulto 25kg</h2>
+                        <p class="produto-preco">R$ 157,00</p>
+                    </div>
+                </div>
+                
+                <div class="produto-card">
+                    <img src="https://cobasi.vteximg.com.br/arquivos/ids/932868/racao-dog-chow-caes-adultos-medios-e-grandes-carne-frango-e-arroz-20kgs-lado.jpg?v=638899307852500000" alt="Dog Chow">
+                    <div class="produto-info">
+                        <h2 class="produto-nome">Dog Chow Carne e Frango Adulto Médios e Grandes 20kg</h2>
+                        <p class="produto-preco">R$ 268,00</p>
+                    </div>
+                </div>
+                
+                <div class="produto-card">
+                    <img src="https://cobasi.vteximg.com.br/arquivos/ids/896760/racao-dog-chow-caes-adultos-minis-e-pequenos-carne-frango-e-arroz-1kg-frente.jpg?v=637750971512100000" alt="Dog Chow">
+                    <div class="produto-info">
+                        <h2 class="produto-nome">Dog Chow Carne e Frango Adulto Médios e Pequenos 20kg</h2>
+                        <p class="produto-preco">R$ 268,00</p>
+                    </div>
+                </div>
+                
+                <div class="produto-card">
+                    <img src="https://www.petlove.com.br/images/products/250471/product/Ra%C3%A7%C3%A3o_Nestl%C3%A9_Purina_Dog_Chow_Extra_Life_Papita_para_C%C3%A3es_Filhotes_-_20_Kg_2659617_32.jpg?1635544968" alt="Dog Chow">
+                    <div class="produto-info">
+                        <h2 class="produto-nome">Dog Chow PAPITA Carne, Frango, Arroz, Milho e Leite Filhote 20kg</h2>
+                        <p class="produto-preco">R$ 268,00</p>
+                    </div>
+                </div>
+                
+                <div class="produto-card">
+                    <img src="https://fvoalimentos.com.br/wp-content/uploads/2021/12/Dominium-Dog-Adulto-scaled.webp" alt="Dominium">
+                    <div class="produto-info">
+                        <h2 class="produto-nome">Dominium Carne Adulto 15kg</h2>
+                        <p class="produto-preco">R$ 138,00</p>
+                    </div>
+                </div>
+                
+                <div class="produto-card">
+                    <img src="https://alinutri.ind.br/wp-content/uploads/2023/08/RECEITA-AD-RG-MOCKUP-DIREITA.png" alt="Receita">
+                    <div class="produto-info">
+                        <h2 class="produto-nome">Receita Adulto Raças Grandes 15kg</h2>
+                        <p class="produto-preco">R$ 192,00</p>
+                    </div>
+                </div>
+                
+                <div class="produto-card">
+                    <img src="https://alinutri.ind.br/wp-content/uploads/2023/08/RECEITA-AD-RPM-MOCKUP-DIREITA.png" alt="Receita">
+                    <div class="produto-info">
+                        <h2 class="produto-nome">Receita Adulto Raças Pequenas e Médias 15kg</h2>
+                        <p class="produto-preco">R$ 192,00</p>
+                    </div>
+                </div>
+                
+                <div class="produto-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6sQulhoG5Rr9_bhGq9IZAeL-NavAEHvHWAKrcz-zjCw&s=10" alt="Receita">
+                    <div class="produto-info">
+                        <h2 class="produto-nome">Receita Filhote Todas as Raças 15kg</h2>
+                        <p class="produto-preco">R$ 192,00</p>
+                    </div>
+                </div>
+                
+                <div class="produto-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIbBTQOkZ2zIFvO454LdHDW9X0iMsKD56O7ydIdmhqb_O4DYY2x_8vy4ak&s=10" alt="texto alternativo">
+                    <div class="produto-info">
+                        <h2 class="produto-nome">Nature Form 15kg</h2>
+                        <p class="produto-preco">R$ 250,00</p>
+                    </div>
+                </div>
+                
+                <div class="produto-card">
+                    <img src="https://a-static.mlcdn.com.br/420x420/racao-seca-alinutri-nature-formula-pro-para-caes-adultos-racas-pequenas-e-medias-15-kg/petloveoficial/31027517227/d7aaa4a941d0545a50221c6219728218.jpeg" alt="texto alternativo">
+                    <div class="produto-info">
+                        <h2 class="produto-nome">Nature pro 15kg</h2>
+                        <p class="produto-preco">R$ 268,00</p>
+                    </div>
+                </div>
+                
+                <div class="produto-card">
+                    <img src="https://primpet.com.br/wp-content/uploads/2022/09/1-Golden-Formula.png" alt="texto alternativo">
+                    <div class="produto-info">
+                        <h2 class="produto-nome">Golden Form 15kg </h2>
+                        <p class="produto-preco">R$ 212,50</p>
+                    </div>
+                </div>
+                <!-- fim-->
+           </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const barraBusca = document.getElementById('barraBusca');
+
+            barraBusca.addEventListener('keyup', function() {
+                const termoBusca = this.value.toLowerCase();
+                const produtos = document.querySelectorAll('.produto-card');
+
+                produtos.forEach(function(produto) {
+                    const nomeProduto = produto.querySelector('.produto-nome').textContent.toLowerCase();
+                    
+                    if (nomeProduto.includes(termoBusca)) {
+                        produto.style.display = 'flex'; // Mostra o card
+                    } else {
+                        produto.style.display = 'none'; // Esconde o card
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+  </html>
+  
